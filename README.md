@@ -1,6 +1,6 @@
-# Embodied Carbon Calculator for Ordinary Portland Cement (OPC)
+# Embodied Carbon Calculator for Portland Cement
 
-A thesis submitted in the fulfilment of the degree of Master of Philosophy in the Faculty of Science and Engineering, University of Manchester.
+The calculator was designed by Ruiyi and Dr Achintha, from the Faculty of Science and Engineering, University of Manchester.
 <br>
 
 ## Background
@@ -19,7 +19,7 @@ Flexibility is central to the design methodology. The model allows emission fact
   - [A1 – Raw Material Supply](#a1--raw-material-supply)
   - [A2 – Transportation](#a2--transportation)
   - [A3 – Manufacturing](#a3--manufacturing)
-- [Reference Result](#reference-result)
+- [Worked Example](#worked-example)
 - [Parameters](#parameters)
 - [Assumptions](#assumptions)
 - [References](#references)
@@ -51,10 +51,12 @@ For consistency, emissions expressed per unit mass of cement produced are conver
 | Type | Clinker | Gypsum | SCM | SCM supply factor |
 |---|---|---|---|---|
 | CEM I | 95% | 5% | – | – |
-| CEM II/B-S | 70% | 5% | 25% GGBS | 79 kgCO₂e/t |
-| CEM III/A | 45% | 5% | 50% GGBS | 79 kgCO₂e/t |
+| CEM II/B-S | 70% | 5% | 25% GGBS | 155 kgCO₂e/t |
+| CEM III/A | 45% | 5% | 50% GGBS | 155 kgCO₂e/t |
 
-Selecting a type pre-loads its composition; all three fractions remain editable and are validated to sum to 100%.
+- Selecting a type pre-loads its composition; all three fractions remain editable and are validated to sum to 100%.   
+- The indicative CO₂e emission factor for the supplementary cementitious material (SCM), assumed here to be ground granulated blast-furnace slag (GGBS), is 155 kgCO₂e/t, based on the 2025 version of MPA Fact Sheet 18 [1].
+- GGBS used to be treated as a by-product of steelmaking, with little or no emissions allocated to it. Its reclassification as a co-product requires a share of steelmaking emissions to be allocated based on economic value, increasing its reported emission factor from 75–80 to 155 kgCO₂e/t [2].
 
 <br>
 
@@ -276,7 +278,7 @@ The mass entering this equation is pure CaCO₃, not the as-quarried limestone. 
 
 <br>
 
-## Reference Result
+## Worked Example
 
 All defaults, CEM I, 1 tonne of cement:
 
@@ -334,6 +336,7 @@ Inputs are validated as they are entered: values are range-checked, non-numeric 
 | CaCO₃/CaO stoichiometric ratio | 1.785 (100/56) | Basic chemistry |
 | CO₂/CaCO₃ molecular weight ratio | 0.44 (44/100) | Basic chemistry |
 | Gypsum proportion in clinker | 5% of finished cement| Standard OPC composition assumption; added post-kiln, not a clinker phase |
+| GGBS supply factor | 155 kgCO₂e/t | MPA Fact Sheet 18 (2025) |
 | Functional unit | 1 tonne OPC | Cradle-to-gate boundary |
 | CaO source attribution | 100% carbonate | IPCC Tier 2 |
 | Transport factors | GLEC well-to-wheel, incl. empty running	| Return legs not counted separately|
@@ -342,11 +345,13 @@ Inputs are validated as they are entered: values are range-checked, non-numeric 
 
 ## References
 
+[1] MPA (2025). *Fact Sheet 18, Embodied CO₂e of UK cements.*
+[2] Astle P, (2026). Available from: https://www.linkedin.com/posts/paul-astle-ramboll_decarbonisation-lowercarbonconcrete-share-7467207404255035392-giTo/
 - IPCC (2006). *2006 IPCC Guidelines for National Greenhouse Gas Inventories, Volume 3: Industrial Processes and Product Use.* IPCC.
 - DESNZ (2023). *UK Government GHG Conversion Factors for Company Reporting.* Department for Energy Security and Net Zero.
 - GLEC Framework (2019). *Global Logistics Emissions Council Framework for Logistics Emissions Accounting and Reporting.* Smart Freight Centre.
 - Sapko, M.J. et al. (2002). *Experimental and Theoretical Chemical Equilibrium Explosive Output.* Proceedings of the 28th Annual Conference on Explosives and Blasting Technique.
-- EN 15804:2012+A2:2019. *Sustainability of Construction Works — Environmental Product Declarations.*
+- EN 15804:2012+A2:2019. *Sustainability of Construction Works — Environmental Product Declarations.* 
 
 ---
 
