@@ -79,21 +79,26 @@ A1 covers quarrying (A1.1), crushing and screening (A1.2), and purchased materia
 
 #### Clinker chemistry and the material balance
 
-The raw material demand is derived from clinker chemistry rather than assumed. CaO mass fraction is computed from molar masses for each of the four Bogue phases:
+The raw material demand is derived from clinker chemistry rather than assumed.
 
-Cao fraction example - tricalcium silicate (3CaO·SiO₂)
+Portland cement clinker is primarily composed of four mineral phases: tricalcium silicate (C₃S), dicalcium silicate (C₂S), tricalcium aluminate (C₃A), and tetracalcium aluminoferrite (C₄AF). Industry report shows clinker composition varies between narrow limits according to raw-material composition and manufacturing conditions [3].
+
+CaO weight in each component is derived from molecular weight ratios. For example, in tricalcium silicate (3CaO·SiO₂, molecular weight = 228)
 ```
-CaO weight in each component is derived from molecular weight ratios.
-In tricalcium silicate (3CaO·SiO₂, molecular weight = 228):
 CaO weight = (56 × 3) / 228 = 0.74
 ```
 
+The default clinker phase proportions are derived from the mean Bogue phase composition of ASTM C150 Type I Portland cement in the 2014 US survey [4] in Table 3: C₃S 57.5%, C₂S 13.0%, C₃A 9.3% and C₄AF 7.6% by mass of cement.    
+
+These sum to 87.4% because the Bogue calculation is applied to the oxide analysis of the finished cement, which also contains gypsum, free lime and other minor constituents.    
+The calculator takes proportions of clinker, so the four values are normalised to 100%, giving 65.8%, 14.9%, 10.6% and 8.7%.   
+
 | Phase | Formula | Default proportion | CaO fraction |
 |---|---|---|---|
-| C3S – alite | 3CaO·SiO₂ | 52.6% | 0.7368 |
-| C2S – belite | 2CaO·SiO₂ | 26.3% | 0.6512 |
+| C3S – alite | 3CaO·SiO₂ | 65.8% | 0.7368 |
+| C2S – belite | 2CaO·SiO₂ | 14.9% | 0.6512 |
 | C3A – aluminate | 3CaO·Al₂O₃ | 10.6% | 0.6226 |
-| C4AF – ferrite | 4CaO·Al₂O₃·Fe₂O₃ | 10.5% | 0.4616 |
+| C4AF – ferrite | 4CaO·Al₂O₃·Fe₂O₃ | 8.7% | 0.4616 |
 | Gypsum | CaSO₄·2H₂O | 0 | 0.00 |
 
 Gypsum does not appear in this table. It is interground after the kiln and is not a clinker phase, so it is accounted separately as 5% of the finished cement. Including it here would understate the clinker phases and, through them, the calcination CO₂.
@@ -102,25 +107,25 @@ To estimate the raw materials required for producing 1 tonne cement, for instanc
 ```
 CaO in clinker (%) = Σ [proportion (%) × CaO weight]
 ```
-With the default composition this gives 67.33%.
+With the default composition this gives 68.79%.
 Limestone demand is then back-calculated through the CaCO₃/CaO stoichiometric ratio (100/56 = 1.785) and the quarried mineral purity:
 ```
 CaCO₃ required   = cement mass × clinker% × CaO in clinker% × 1.785
 Limestone required = CaCO₃ required / mineral purity
 ```
-For CEM I, it requires 1.142 t of CaCO₃, and at 95% purity 1.202 t of quarried limestone is supplied per tonne of cement.
+For CEM I, it requires 1.166 t of CaCO₃, and at 95% purity 1.228 t of quarried limestone is supplied per tonne of cement.
 
 Non-carbonate raw materials are entered per tonne of clinker and scaled to the cement basis:
 
 | Raw material | Default (t per t clinker) | Per tonne CEM I |
 |---|---|---|
-| Limestone | derived from chemistry | 1.202 t |
+| Limestone | derived from chemistry | 1.228 t |
 | Clay | 0.20 | 0.190 t |
 | Sand | 0.03 | 0.028 t |
 | Iron ore | 0.02 | 0.019 t |
-| **Total quarried rock** | | **1.439 t** |
+| **Total quarried rock** | | **1.465 t** |
 
-Two masses are carried forward. CaCO₃ (1.142 t) drives calcination, because only carbonate decomposes. Quarried rock (1.439 t) drives digging, crushing and hauling, because all of it is handled.
+Two masses are carried forward. CaCO₃ (1.166 t) drives calcination, because only carbonate decomposes. Quarried rock (1.465 t) drives digging, crushing and hauling, because all of it is handled.
 
 #### A1.1 – Quarrying
 
@@ -345,8 +350,9 @@ Inputs are validated as they are entered: values are range-checked, non-numeric 
 
 ## References
 
-[1] MPA (2025). *Fact Sheet 18, Embodied CO₂e of UK cements.*
-[2] Astle P, (2026). Available from: https://www.linkedin.com/posts/paul-astle-ramboll_decarbonisation-lowercarbonconcrete-share-7467207404255035392-giTo/
+[1] MPA (2025). *Fact Sheet 18, Embodied CO₂e of UK cements.*   
+[2] Astle P, (2026). Available from: https://www.linkedin.com/posts/paul-astle-ramboll_decarbonisation-lowercarbonconcrete-share-7467207404255035392-giTo/   
+[3] Christidis, G. E., Dimitriadi, M., Triantafyllou, G., & Tsoumeleas, C. (2021). Quantitative Analysis of Portland Cement Clinker with Rietveld Refinement: Implications of the Amorphous Matter. Materials Proceedings, 5(1), 75. https://doi.org/10.3390/materproc2021005075   
 - IPCC (2006). *2006 IPCC Guidelines for National Greenhouse Gas Inventories, Volume 3: Industrial Processes and Product Use.* IPCC.
 - DESNZ (2023). *UK Government GHG Conversion Factors for Company Reporting.* Department for Energy Security and Net Zero.
 - GLEC Framework (2019). *Global Logistics Emissions Council Framework for Logistics Emissions Accounting and Reporting.* Smart Freight Centre.
