@@ -110,7 +110,7 @@ CaO in clinker (%) = Σ [proportion (%) × CaO weight]
 With the default composition this gives 68.79%.
 Limestone demand is then back-calculated through the CaCO₃/CaO stoichiometric ratio (100/56 = 1.785) and the quarried mineral purity:
 ```
-CaCO₃ required   = cement mass × clinker% × CaO in clinker% × 1.785
+CaCO₃ required = cement mass × clinker% × CaO in clinker% × 1.785
 Limestone required = CaCO₃ required / mineral purity
 ```
 For CEM I, it requires 1.166 t of CaCO₃, and at 95% purity 1.228 t of quarried limestone is supplied per tonne of cement.
