@@ -200,10 +200,10 @@ Heat required to raise raw meal to kiln temperature (~1200°C) is calculated wit
 ```
 Q = m × c × ΔT
 ```
-Where:
-- `m` = mass of raw meal (kg)
-- `c` = 0.84 kJ/kg·°C (specific heat capacity of cement raw meal, fixed constant)
-- `ΔT` = kiln temperature − ambient temperature (°C)
+Where:      
+  `m` = mass of raw meal (kg)    
+  `c` = 0.84 kJ/kg·°C (specific heat capacity of cement raw meal, fixed constant)       
+  `ΔT` = kiln temperature − ambient temperature (°C)     
 
 The default heat required is 3,000 MJ per tonne of clinker, within the 3.0–3.4 GJ/t range typical of modern dry-process kilns with preheater and precalciner.
 
@@ -212,19 +212,7 @@ The fuel consumed and CO₂ produced from the heat generated:
 Fuel consumed (kg) = Q / calorific value of fuel (KJ/kg)
 CO₂_combustion = fuel consumed (kg) × EF_fuel (kgCO₂/kg)
 ```
-
-Fuel is entered as a mix, given as percentage shares of kiln heat that are normalised to 100%. This allows co-firing scenarios rather than forcing a single fuel. Calorific values and emission factors are listed below:
-
-| Fuel | Net Calorific Value (MJ/kg) | EF (kgCO₂/kg) |
-|---|---|---|
-| Coal | 25.8 | 2.42 |
-| Petcoke | 32.5 | 3.40 |
-| Natural gas | 48.0 | 2.75 |
-| Fuel oil | 40.4 | 3.17 |
-| Diesel | 43.0 | 3.17 |
-
-Both columns are on a net calorific value basis. Mixing a gross-CV emission factor with a net CV overstates fuel demand by roughly 5–10% and is a common error.
-
+   
 #### A3.2 – Electricity Consumption
 
 Electricity consumed by each piece of equipment is calculated separately and then summed up:
@@ -321,7 +309,7 @@ The kiln heat, fuel mix, electricity and transport distance defaults are modelli
 
 ## Emission factors and sources
  
-The emission factors used by the model from different sources are listed below.  
+- The emission factors used by the model from different sources are listed below.  
 
 | Item | Value | Source |
 |---|---|---|
@@ -337,10 +325,10 @@ The emission factors used by the model from different sources are listed below.
 | Clinker phases | 65.8 / 14.9 / 10.6 / 8.7 % | PCA (2016), Table 3, ASTM C150 Type I means normalised to 100% |
 | Kiln specific heat consumption | 3,000 MJ/t clinker | Typical modern dry kiln with preheater/precalciner |
            
-- The indicative CO₂e emission factor for ground granulated blast-furnace slag (GGBS), is 155 kgCO₂e/t, based on the 2025 version of MPA Fact Sheet 18 [4]. GGBS used to be treated as a by-product of steelmaking, with little or no emissions allocated to it. Its reclassification as a co-product requires a share of steelmaking emissions to be allocated based on economic value, increasing its reported emission factor from 70 to 155 kgCO₂e/t [5]. Replace it with your own supplier value where one exists.
+The indicative CO₂e emission factor for ground granulated blast-furnace slag (GGBS), is 155 kgCO₂e/t, based on the 2025 version of MPA Fact Sheet 18 [4]. GGBS used to be treated as a by-product of steelmaking, with little or no emissions allocated to it. Its reclassification as a co-product requires a share of steelmaking emissions to be allocated based on economic value, increasing its reported emission factor from 70 to 155 kgCO₂e/t [5]. Replace it with your own supplier value where one exists.
          
-Kiln fuel factors, derived from IPCC (2006) Volume 2
-    
+- Kiln fuel factors, derived from IPCC (2006) Volume 2. Fuel is entered as a mix, given as percentage shares of kiln heat that are normalised to 100%. This allows co-firing scenarios rather than forcing a single fuel. Net Calorific values (NCV) and emission factors are listed below:
+         
 | Fuel | EF (kg CO₂/TJ) | NCV (MJ/kg) | EF (kgCO₂/kg) |
 |---|---|---|---|
 | Coal (other bituminous) | 94,600 | 25.8 | 2.44 |
@@ -349,9 +337,9 @@ Kiln fuel factors, derived from IPCC (2006) Volume 2
 | Fuel oil (residual) | 77,400 | 40.4 | 3.13 |
 | Diesel (gas/diesel oil) | 74,100 | 43.0 | 3.19 |
          
-- The 2019 Refinement to the IPCC Guidelines leaves these defaults unchanged [6], so the 2006 values remain current.
+The 2019 Refinement to the IPCC Guidelines leaves these defaults unchanged [6], so the 2006 values remain current.
      
-For different cement types, all three fractions remain editable and are validated to sum to 100%.  
+- For different cement types, all three fractions remain editable and are validated to sum to 100%.  
 | Type | Clinker | Gypsum | SCM |
 |---|---|---|---|
 | CEM I | 95% | 5% | – |
