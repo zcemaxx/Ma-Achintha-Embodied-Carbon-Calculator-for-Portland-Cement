@@ -363,7 +363,7 @@ The 2019 Refinement to the IPCC Guidelines leaves these defaults unchanged [6], 
    
 <br>
    
-## How to Run
+## How to Run 
 
 1. Clone the repository:
 ```
