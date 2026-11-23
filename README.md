@@ -212,7 +212,7 @@ The fuel consumed and CO₂ produced from the heat generated:
 Fuel consumed (kg) = Q / calorific value of fuel (KJ/kg)
 CO₂_combustion = fuel consumed (kg) × EF_fuel (kgCO₂/kg)
 ```
-   
+    
 #### A3.2 – Electricity Consumption
 
 Electricity consumed by each piece of equipment is calculated separately and then summed up:
@@ -327,7 +327,7 @@ The kiln heat, fuel mix, electricity and transport distance defaults are modelli
            
 The indicative CO₂e emission factor for ground granulated blast-furnace slag (GGBS), is 155 kgCO₂e/t, based on the 2025 version of MPA Fact Sheet 18 [4]. GGBS used to be treated as a by-product of steelmaking, with little or no emissions allocated to it. Its reclassification as a co-product requires a share of steelmaking emissions to be allocated based on economic value, increasing its reported emission factor from 70 to 155 kgCO₂e/t [5]. Replace it with your own supplier value where one exists.
          
-- Kiln fuel factors, derived from IPCC (2006) Volume 2. Fuel is entered as a mix, given as percentage shares of kiln heat that are normalised to 100%. This allows co-firing scenarios rather than forcing a single fuel. Net Calorific values (NCV) and emission factors are listed below:
+- Kiln fuel factors, derived from IPCC (2006) Volume 2. Fuel is entered as a mix, given as percentage shares of kiln heat that are normalised to 100%. This allows co-firing scenarios rather than forcing a single fuel. Net Calorific values (NCV) and emission factors are listed below:  
          
 | Fuel | EF (kg CO₂/TJ) | NCV (MJ/kg) | EF (kgCO₂/kg) |
 |---|---|---|---|
@@ -339,7 +339,7 @@ The indicative CO₂e emission factor for ground granulated blast-furnace slag (
          
 The 2019 Refinement to the IPCC Guidelines leaves these defaults unchanged [6], so the 2006 values remain current.
      
-- For different cement types, all three fractions remain editable and are validated to sum to 100%.  
+- For different cement types, all three fractions remain editable and are validated to sum to 100%.   
 | Type | Clinker | Gypsum | SCM |
 |---|---|---|---|
 | CEM I | 95% | 5% | – |
