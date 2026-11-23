@@ -339,7 +339,8 @@ The indicative CO₂e emission factor for ground granulated blast-furnace slag (
          
 The 2019 Refinement to the IPCC Guidelines leaves these defaults unchanged [6], so the 2006 values remain current.
      
-- For different cement types, all three fractions remain editable and are validated to sum to 100%.   
+- For different cement types, all three fractions remain editable and are validated to sum to 100%.
+     
 | Type | Clinker | Gypsum | SCM |
 |---|---|---|---|
 | CEM I | 95% | 5% | – |
